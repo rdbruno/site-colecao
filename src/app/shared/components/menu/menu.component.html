@@ -1,0 +1,50 @@
+<mat-toolbar>
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+        <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+    </button>
+    Coleções Campinas
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+        <img class="avatar mat-elevation-z8" src="../../../../assets/imgs/sandro.jpg">
+        <h4 class="name">Sandro Daniele</h4>
+        <p class="designation">Colecionador</p>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button" [routerLink]="['selos']">
+            <mat-icon>receipt</mat-icon>
+            <span>Selos</span>
+        </button>
+        <button mat-button class="menu-button" [routerLink]="['ferromodelismo']">
+            <mat-icon>room</mat-icon>
+            <span>Ferromodelismo</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>attach_money</mat-icon>
+            <span>Numismática</span>
+        </button>
+        <button mat-button class="menu-button" [routerLink]="['embalagens']">
+            <mat-icon>book_online</mat-icon>
+            <span>Embalagens</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button">
+            <mat-icon>shopping_bag</mat-icon>
+            <span>Shopee</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>help</mat-icon>
+            <span>Instagram</span>
+        </button>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z4">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
